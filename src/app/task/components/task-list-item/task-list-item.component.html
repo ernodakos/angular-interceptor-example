@@ -1,0 +1,23 @@
+ <div class="row">
+    <div class="col-lg-2">
+        <input
+            type="checkbox"
+            [(ngModel)]="task.is_done"
+            (change)="updateTask()" 
+            [disabled] = "loading || disabled"
+         />
+       
+    </div>
+    <div class="col-lg-4">
+        <input [(ngModel)]="task.name" (change)="updateTask()" [disabled] = "loading || disabled"/>
+        <img  src="assets/loader.gif" alt="loading.." *ngIf="loading"/>
+    </div>
+    <div class="col-lg-2">
+             <button type="button" class="btn btn-danger" (click)="deleteTask()" [disabled] = "loading || disabled">Delete</button>
+        
+    </div>
+    <span>{{task.created_at | age:now }}</span>
+  </div>
+
+
+

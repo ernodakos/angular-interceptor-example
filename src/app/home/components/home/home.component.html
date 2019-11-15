@@ -1,0 +1,9 @@
+<p>
+home basket: {{homeBasket}}
+</p>
+
+<button (click)="changeBasket()">Change basket from home</button>
+
+<div>
+    <app-child [(childBasket)]="homeBasket" ></app-child>
+  </div>

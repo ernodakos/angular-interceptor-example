@@ -1,0 +1,9 @@
+input {
+    border-color: transparent;
+  }
+  input:hover, input:focus {
+    border-color: inherit;
+  }
+  button{
+    margin:2px !important;
+  }

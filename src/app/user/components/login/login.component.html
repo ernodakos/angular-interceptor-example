@@ -1,0 +1,28 @@
+<h3>Login</h3>
+
+<pre>{{form.value | json}}</pre>
+
+<form [formGroup]="form" (ngSubmit)="login()">
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input formControlName="email" type="email" class="form-control" />
+    <div *ngIf="!form.controls.email.valid && !form.controls.email.pristine" class="alert alert-danger" >
+        Email is not valid!  
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input formControlName="password" type="password" class="form-control" />
+    <div *ngIf="!form.controls.password.valid && !form.controls.password.pristine" class="alert alert-danger" >
+        Password is not valid!  
+    </div>
+  </div>
+
+ 
+  <div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid || loading">Login</button>
+    <button type="reset" class="btn btn-default">Reset</button>
+  </div>
+</form>
